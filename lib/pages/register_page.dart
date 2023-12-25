@@ -140,12 +140,13 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 30),
-
+                
                 //logo
-                const Icon(
-                  Icons.lock,
-                  size: 100,
+                Image.asset(
+                  "lib/asset/images/tlr.png",
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.fill,
                 ),
 
                 const SizedBox(height: 30),
@@ -181,9 +182,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   label: 'Confirm Password',
                   obscureText: true,
                 ),
-
-
-                
 
                 const SizedBox(height: 30),
 
