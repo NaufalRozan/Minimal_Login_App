@@ -140,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
+
                 //logo
                 Image.asset(
                   "lib/asset/images/tlr.png",
@@ -149,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   fit: BoxFit.fill,
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
 
                 //Let's create an account for you!
                 Text(
