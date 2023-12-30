@@ -79,7 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                   "lib/asset/images/tlr.png",
                   width: 150,
                   height: 150,
-                  fit: BoxFit.fill,
                 ),
 
                 const SizedBox(height: 15),

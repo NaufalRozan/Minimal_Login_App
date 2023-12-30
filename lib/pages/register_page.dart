@@ -146,7 +146,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   "lib/asset/images/tlr.png",
                   width: 150,
                   height: 150,
-                  fit: BoxFit.fill,
                 ),
 
                 const SizedBox(height: 15),
