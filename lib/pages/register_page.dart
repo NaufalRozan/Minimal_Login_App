@@ -133,14 +133,13 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
                 //logo
                 Image.asset(
                   "lib/asset/images/tlr.png",
@@ -153,10 +152,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 //Let's create an account for you!
                 Text(
                   "Let's create an account for you!",
-                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 16),
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
 
                 //Email
                 MyTextfield(
@@ -165,7 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: false,
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
 
                 //password
                 MyTextfield(
@@ -174,7 +175,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: true,
                 ),
                 //password
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
 
                 MyTextfield(
                   controller: confirmPasswordController,
@@ -196,16 +197,17 @@ class _RegisterPageState extends State<RegisterPage> {
                     Text(
                       'Already have an account?',
                       style: TextStyle(
-                        color: Colors.grey[700],
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
-                      child: const Text(
+                      child: Text(
                         'Login now',
                         style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold),
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],

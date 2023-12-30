@@ -14,17 +14,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text(
           'H O M E',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.inversePrimary
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.grey[300],
+        backgroundColor:  Theme.of(context).colorScheme.background,
       ),
       drawer: Drawer(
         child: Container(
-          color: Colors.grey[300],
+          color:  Theme.of(context).colorScheme.background,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -43,14 +46,14 @@ class HomePage extends StatelessWidget {
                         EdgeInsets.only(right: 10.0), // Tambahkan jarak di sini
                     child: Icon(
                       Icons.home,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
                   title: Text(
                     'HOME',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -69,14 +72,14 @@ class HomePage extends StatelessWidget {
                         EdgeInsets.only(right: 10.0), // Tambahkan jarak di sini
                     child: Icon(
                       Icons.settings,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
                   title: Text(
                     'SETTINGS',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -96,25 +99,19 @@ class HomePage extends StatelessWidget {
                         EdgeInsets.only(right: 10.0), // Tambahkan jarak di sini
                     child: Icon(
                       Icons.logout,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
                   title: Text(
                     'LOGOUT',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.grey[700],
+                      color: Theme.of(context).colorScheme.inversePrimary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   onTap: () {
                     FirebaseAuth.instance.signOut();
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(onTap: () {}),
-                      ),
-                    );
                   },
                 ),
               ],
@@ -127,7 +124,7 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           child: Text(
             "This is in the home page of your app once the user log in",
-            style: TextStyle(fontSize: 15, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.secondary),
             textAlign: TextAlign.center,
           ),
         ),
