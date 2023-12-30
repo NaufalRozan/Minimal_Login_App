@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:minimal_login_app/components/my_button.dart';
 import 'package:minimal_login_app/components/my_textfield.dart';
 import 'package:minimal_login_app/components/square_tile.dart';
+import 'package:minimal_login_app/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
@@ -73,13 +74,12 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
                 //logo
                 Image.asset(
-                "lib/asset/images/tlr.png",
-                width: 150,
-                height: 150,
-                fit: BoxFit.fill,
+                  "lib/asset/images/tlr.png",
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.fill,
                 ),
 
                 const SizedBox(height: 15),
@@ -129,9 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 30),
 
                 //sign in button
-                MyButton(
-                  text: "Login",
-                  onTap: signUserIn),
+                MyButton(text: "Login", onTap: signUserIn),
 
                 const SizedBox(height: 30),
 
@@ -168,17 +166,19 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 30),
 
                 //google + github sign in buttons
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //google
                     SquareTile(
+                        onTap: () => AuthService().signInWithGoogle(),
                         imagePath: 'lib/asset/images/icons8-google-100.png'),
 
                     SizedBox(width: 10),
 
                     //github
                     SquareTile(
+                        onTap: () {},
                         imagePath: 'lib/asset/images/icons8-github-100.png')
                   ],
                 ),
